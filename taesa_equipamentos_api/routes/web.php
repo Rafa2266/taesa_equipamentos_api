@@ -25,8 +25,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/* Route::get('/',[EquipamentoController::class,'index']);
-Route::get('/edit/${id}',[EquipamentoController::class,'edit']);
-Route::post('/create',[EquipamentoController::class,'store']);
-Route::put('/update/${id}',[EquipamentoController::class,'update']);
-Route::delete('/delete/${id}',[EquipamentoController::class,'delete']); */

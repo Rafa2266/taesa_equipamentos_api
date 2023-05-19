@@ -20,10 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/* Route::prefix('equipamentos')->group(function () {
-    Route::get('/',[ EquipamentoController::class, 'index']);
-    Route::post('/create',[ EquipamentoController::class, 'store']);
-    Route::delete('/{id}',[ EquipamentoController::class, 'delete']);
-    Route::get('/{id}',[ EquipamentoController::class, 'edit']);
-    Route::put('/{id}',[ EquipamentoController::class, 'update']);
-}); */
+
