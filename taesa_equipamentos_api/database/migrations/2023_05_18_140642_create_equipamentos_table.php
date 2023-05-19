@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('equipamentos', function (Blueprint $table) {
             $table->id();
+            $table->string("num_serie");
+            $table->string("fab");
+            $table->string("tipo");
+            $table->string("sub_estacao");
+            $table->string("data_entrada_operacao");
+            $table->string("nivel_tensao");
+            $table->boolean("status");
+            $table->string("obs")->nullable();
             $table->timestamps();
         });
     }

@@ -15,7 +15,6 @@ class Equipamento extends Model
         'fab',
         'tipo',
         'sub_estacao',
-        'sub_estacao',
         'data_entrada_operacao',
         'nivel_tensao',
         'status',
