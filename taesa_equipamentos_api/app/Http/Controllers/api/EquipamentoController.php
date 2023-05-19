@@ -31,7 +31,7 @@ class EquipamentoController extends Controller
             $equipamentos->reorder($request['order'], 'asc');
         }     
         $equipamentos->offset($request['offset']);
-        $equipamentos->limit(5);  
+        $equipamentos->limit(6);  
         return $equipamentos->get();
     }
 
