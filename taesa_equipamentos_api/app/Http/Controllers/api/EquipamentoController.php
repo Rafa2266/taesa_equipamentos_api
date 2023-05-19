@@ -28,7 +28,7 @@ class EquipamentoController extends Controller
         if(!$request['order']){
             $equipamentos->reorder('id', 'asc');
         }else{
-            $equipamentos->orderBy($request['order']);
+            $equipamentos->reorder($request['order'], 'asc');
         }     
         $equipamentos->offset($request['offset']);
         $equipamentos->limit(5);  
