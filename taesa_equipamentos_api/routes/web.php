@@ -16,9 +16,9 @@ use App\Http\Controllers\api\EquipamentoController;
 Route::prefix('equipamentos')->group(function () {
     Route::get('/',[ EquipamentoController::class, 'index']);
     Route::post('/create',[ EquipamentoController::class, 'store']);
-    Route::delete('/{id}',[ EquipamentoController::class, 'delete']);
-    Route::get('/{id}',[ EquipamentoController::class, 'edit']);
-    Route::put('/{id}',[ EquipamentoController::class, 'update']);
+    Route::delete('/delete/{id}',[ EquipamentoController::class, 'delete']);
+    Route::get('/edit/{id}',[ EquipamentoController::class, 'edit']);
+    Route::put('/update/{id}',[ EquipamentoController::class, 'update']);
 });
 
 Route::get('/', function () {

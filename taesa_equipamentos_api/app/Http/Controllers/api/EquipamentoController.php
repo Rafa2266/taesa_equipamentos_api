@@ -31,7 +31,7 @@ class EquipamentoController extends Controller
      */
     public function edit(string $id)
     {
-        return Equipamento::findOrFail(explode("=",$id)[1]);
+        return Equipamento::findOrFail($id);
         //return $id;
 
     }
