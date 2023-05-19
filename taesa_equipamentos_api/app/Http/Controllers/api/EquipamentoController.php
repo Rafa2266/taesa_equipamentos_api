@@ -11,9 +11,28 @@ class EquipamentoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        return Equipamento::all();
+    public function index(Request $request)
+    { 
+        $equipamentos;
+        if($request['fabFilter']){
+            $equipamentos=Equipamento::where('fab','like','%'.$request['fabFilter'].'%');
+        }else{
+            $equipamentos=Equipamento::where('fab','like','%%');
+        }
+
+        if($request['tipoFilter']){
+            $equipamentos->where('tipo','like','%'.$request['tipoFilter'].'%');
+        }else{
+            $equipamentos->where('tipo','like','%%');
+        }
+        if(!$request['order']){
+            $equipamentos->reorder('id', 'asc');
+        }else{
+            $equipamentos->orderBy($request['order']);
+        }     
+        $equipamentos->offset($request['offset']);
+        $equipamentos->limit(5);  
+        return $equipamentos->get();
     }
 
 
@@ -32,7 +51,6 @@ class EquipamentoController extends Controller
     public function edit(string $id)
     {
         return Equipamento::findOrFail($id);
-        //return $id;
 
     }
 
