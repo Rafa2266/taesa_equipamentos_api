@@ -43,6 +43,7 @@ class EquipamentoController extends Controller
     {
         $equipamento=Equipamento::findOrFail($id);
         $equipamento->update($request->all());
+        return $request;
     }
 
     /**
